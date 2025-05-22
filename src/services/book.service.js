@@ -1,8 +1,9 @@
 "use server";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const getAllBooksService = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/book`);
+    const res = await fetch(`${baseUrl}/book`);
     const data = await res.json();
 
     return data;
@@ -13,7 +14,7 @@ export const getAllBooksService = async () => {
 
 export const getBookByIdService = async (id) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/book/${id}`);
+    const res = await fetch(`${baseUrl}/book/${id}`);
     const data = await res.json();
 
     return data;
@@ -24,9 +25,7 @@ export const getBookByIdService = async (id) => {
 
 export const getBookByNameService = async (name) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/book?search=${name}`
-    );
+    const res = await fetch(`${baseUrl}/book?search=${name}`);
     const data = await res.json();
 
     return data;
@@ -37,9 +36,7 @@ export const getBookByNameService = async (name) => {
 
 export const getAllBookCategoriesService = async () => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/book_category`
-    );
+    const res = await fetch(`${baseUrl}/book_category`);
     const data = await res.json();
 
     return data;
@@ -49,9 +46,7 @@ export const getAllBookCategoriesService = async () => {
 };
 export const getBookCategoryByIdService = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/book_category/search?query=${id}`
-    );
+    const res = await fetch(`${baseUrl}/book_category/search?query=${id}`);
     const data = await res.json();
 
     return data;
@@ -61,9 +56,7 @@ export const getBookCategoryByIdService = async (id) => {
 };
 export const getBooksByCategoryIdService = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/book?query=${id}`
-    );
+    const res = await fetch(`${baseUrl}/book?query=${id}`);
     const data = await res.json();
 
     return data;

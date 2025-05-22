@@ -1,8 +1,9 @@
 "use server";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 export const getAllCartoonsService = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/cartoon`);
+    const res = await fetch(`${baseUrl}/cartoon`);
     const data = await res.json();
     return data;
   } catch (e) {
@@ -12,9 +13,7 @@ export const getAllCartoonsService = async () => {
 
 export const getCartoonByIdService = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon/${id}`
-    );
+    const res = await fetch(`${baseUrl}/cartoon/${id}`);
     const data = await res.json();
 
     return data;
@@ -25,9 +24,7 @@ export const getCartoonByIdService = async (id) => {
 
 export const getCartoonByTitleService = async (title) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon?search=${title}`
-    );
+    const res = await fetch(`${baseUrl}/cartoon?search=${title}`);
     const data = await res.json();
 
     return data;
@@ -38,9 +35,7 @@ export const getCartoonByTitleService = async (title) => {
 
 export const getAllCartoonGenresService = async () => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon_genre`
-    );
+    const res = await fetch(`${baseUrl}/cartoon_genre`);
     const data = await res.json();
 
     return data;
@@ -50,9 +45,7 @@ export const getAllCartoonGenresService = async () => {
 };
 export const getCartoonGenresByIdService = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon_genre/search?genre=${id}`
-    );
+    const res = await fetch(`${baseUrl}/cartoon_genre/search?genre=${id}`);
     const data = await res.json();
 
     return data;
@@ -63,9 +56,7 @@ export const getCartoonGenresByIdService = async (id) => {
 
 export const getCartoonsByGenreIdService = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon?genre=${id}`
-    );
+    const res = await fetch(`${baseUrl}/cartoon?genre=${id}`);
     const data = await res.json();
     return data;
   } catch (e) {
