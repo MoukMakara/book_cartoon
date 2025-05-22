@@ -2,7 +2,7 @@
 
 export const getAllBooksService = async () => {
   try {
-    const res = await fetch("https://nextjs-homework005.vercel.app/api/book");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/book`);
     const data = await res.json();
 
     return data;
@@ -13,9 +13,7 @@ export const getAllBooksService = async () => {
 
 export const getBookByIdService = async (id) => {
   try {
-    const res = await fetch(
-      `https://nextjs-homework005.vercel.app/api/book/${id}`
-    );
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/book/${id}`);
     const data = await res.json();
 
     return data;
@@ -27,7 +25,7 @@ export const getBookByIdService = async (id) => {
 export const getBookByNameService = async (name) => {
   try {
     const res = await fetch(
-      `https://nextjs-homework005.vercel.app/api/book?search=${name}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/book?search=${name}`
     );
     const data = await res.json();
 
@@ -40,7 +38,7 @@ export const getBookByNameService = async (name) => {
 export const getAllBookCategoriesService = async () => {
   try {
     const res = await fetch(
-      "https://nextjs-homework005.vercel.app/api/book_category"
+      `${process.env.NEXT_PUBLIC_BASE_URL}/book_category`
     );
     const data = await res.json();
 
@@ -52,7 +50,7 @@ export const getAllBookCategoriesService = async () => {
 export const getBookCategoryByIdService = async (id) => {
   try {
     const res = await fetch(
-      `https://nextjs-homework005.vercel.app/api/book_category/search?query=${id}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/book_category/search?query=${id}`
     );
     const data = await res.json();
 
@@ -64,7 +62,7 @@ export const getBookCategoryByIdService = async (id) => {
 export const getBooksByCategoryIdService = async (id) => {
   try {
     const res = await fetch(
-      `https://nextjs-homework005.vercel.app/api/book?query=${id}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/book?query=${id}`
     );
     const data = await res.json();
 
